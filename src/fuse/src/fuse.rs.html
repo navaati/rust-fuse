@@ -9,7 +9,9 @@
 
     <title>fuse.rs.html -- source</title>
 
-    <link rel="stylesheet" type="text/css" href="../../main.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
 
     
     
@@ -24,10 +26,10 @@
 
     
 
-    <section class="sidebar">
+    <nav class="sidebar">
         
         
-    </section>
+    </nav>
 
     <nav class="sub">
         <form class="search-form js-only">
@@ -530,6 +532,44 @@
 <span id="488">488</span>
 <span id="489">489</span>
 <span id="490">490</span>
+<span id="491">491</span>
+<span id="492">492</span>
+<span id="493">493</span>
+<span id="494">494</span>
+<span id="495">495</span>
+<span id="496">496</span>
+<span id="497">497</span>
+<span id="498">498</span>
+<span id="499">499</span>
+<span id="500">500</span>
+<span id="501">501</span>
+<span id="502">502</span>
+<span id="503">503</span>
+<span id="504">504</span>
+<span id="505">505</span>
+<span id="506">506</span>
+<span id="507">507</span>
+<span id="508">508</span>
+<span id="509">509</span>
+<span id="510">510</span>
+<span id="511">511</span>
+<span id="512">512</span>
+<span id="513">513</span>
+<span id="514">514</span>
+<span id="515">515</span>
+<span id="516">516</span>
+<span id="517">517</span>
+<span id="518">518</span>
+<span id="519">519</span>
+<span id="520">520</span>
+<span id="521">521</span>
+<span id="522">522</span>
+<span id="523">523</span>
+<span id="524">524</span>
+<span id="525">525</span>
+<span id="526">526</span>
+<span id="527">527</span>
+<span id="528">528</span>
 </pre><pre class='rust '>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! FUSE native interface declarations (as of libosxfuse-2.5.5).</span>
@@ -544,6 +584,7 @@
 <span class='comment'>//</span>
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_args</span> {
     <span class='kw'>pub</span> <span class='ident'>argc</span>: <span class='ident'>c_int</span>,
     <span class='kw'>pub</span> <span class='ident'>argv</span>: <span class='op'>*</span><span class='kw'>const</span> <span class='op'>*</span><span class='kw'>const</span> <span class='ident'>c_char</span>,
@@ -568,6 +609,7 @@
 <span class='kw'>pub</span> <span class='kw'>const</span> <span class='ident'>FUSE_ROOT_ID</span>: <span class='ident'>u64</span> <span class='op'>=</span> <span class='number'>1</span>;
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_attr</span> {
     <span class='kw'>pub</span> <span class='ident'>ino</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>size</span>: <span class='ident'>u64</span>,
@@ -592,6 +634,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_kstatfs</span> {
     <span class='kw'>pub</span> <span class='ident'>blocks</span>: <span class='ident'>u64</span>,            <span class='comment'>// Total blocks (in units of frsize)</span>
     <span class='kw'>pub</span> <span class='ident'>bfree</span>: <span class='ident'>u64</span>,             <span class='comment'>// Free blocks</span>
@@ -606,6 +649,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_file_lock</span> {
     <span class='kw'>pub</span> <span class='ident'>start</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>end</span>: <span class='ident'>u64</span>,
@@ -659,6 +703,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>enum</span> <span class='ident'>fuse_opcode</span> {
     <span class='ident'>FUSE_LOOKUP</span> <span class='op'>=</span> <span class='number'>1</span>,
     <span class='ident'>FUSE_FORGET</span> <span class='op'>=</span> <span class='number'>2</span>,            <span class='comment'>// no reply</span>
@@ -756,6 +801,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_entry_out</span> {
     <span class='kw'>pub</span> <span class='ident'>nodeid</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>generation</span>: <span class='ident'>u64</span>,
@@ -767,11 +813,13 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_forget_in</span> {
     <span class='kw'>pub</span> <span class='ident'>nlookup</span>: <span class='ident'>u64</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_attr_out</span> {
     <span class='kw'>pub</span> <span class='ident'>attr_valid</span>: <span class='ident'>i64</span>,
     <span class='kw'>pub</span> <span class='ident'>attr_valid_nsec</span>: <span class='ident'>i32</span>,
@@ -781,6 +829,7 @@
 
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span> <span class='op'>=</span> <span class='string'>&quot;macos&quot;</span>)]</span>
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_getxtimes_out</span> { <span class='comment'>// OS X only</span>
     <span class='kw'>pub</span> <span class='ident'>bkuptime</span>: <span class='ident'>i64</span>,
     <span class='kw'>pub</span> <span class='ident'>crtime</span>: <span class='ident'>i64</span>,
@@ -789,24 +838,28 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_mknod_in</span> {
     <span class='kw'>pub</span> <span class='ident'>mode</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>rdev</span>: <span class='ident'>u32</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_mkdir_in</span> {
     <span class='kw'>pub</span> <span class='ident'>mode</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>padding</span>: <span class='ident'>u32</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_rename_in</span> {
     <span class='kw'>pub</span> <span class='ident'>newdir</span>: <span class='ident'>u64</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>cfg</span>(<span class='ident'>target_os</span> <span class='op'>=</span> <span class='string'>&quot;macos&quot;</span>)]</span>
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_exchange_in</span> {   <span class='comment'>// OS X only</span>
     <span class='kw'>pub</span> <span class='ident'>olddir</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>newdir</span>: <span class='ident'>u64</span>,
@@ -814,11 +867,13 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_link_in</span> {
     <span class='kw'>pub</span> <span class='ident'>oldnodeid</span>: <span class='ident'>u64</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_setattr_in</span> {
     <span class='kw'>pub</span> <span class='ident'>valid</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>padding</span>: <span class='ident'>u32</span>,
@@ -853,12 +908,14 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_open_in</span> {
     <span class='kw'>pub</span> <span class='ident'>flags</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>mode</span>: <span class='ident'>u32</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_open_out</span> {
     <span class='kw'>pub</span> <span class='ident'>fh</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>open_flags</span>: <span class='ident'>u32</span>,
@@ -866,6 +923,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_release_in</span> {
     <span class='kw'>pub</span> <span class='ident'>fh</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>flags</span>: <span class='ident'>u32</span>,
@@ -874,6 +932,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_flush_in</span> {
     <span class='kw'>pub</span> <span class='ident'>fh</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>unused</span>: <span class='ident'>u32</span>,
@@ -882,6 +941,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_read_in</span> {
     <span class='kw'>pub</span> <span class='ident'>fh</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>offset</span>: <span class='ident'>u64</span>,
@@ -890,6 +950,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_write_in</span> {
     <span class='kw'>pub</span> <span class='ident'>fh</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>offset</span>: <span class='ident'>u64</span>,
@@ -898,17 +959,20 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_write_out</span> {
     <span class='kw'>pub</span> <span class='ident'>size</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>padding</span>: <span class='ident'>u32</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_statfs_out</span> {
     <span class='kw'>pub</span> <span class='ident'>st</span>: <span class='ident'>fuse_kstatfs</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_fsync_in</span> {
     <span class='kw'>pub</span> <span class='ident'>fh</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>fsync_flags</span>: <span class='ident'>u32</span>,
@@ -916,6 +980,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_setxattr_in</span> {
     <span class='kw'>pub</span> <span class='ident'>size</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>flags</span>: <span class='ident'>u32</span>,
@@ -926,6 +991,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_getxattr_in</span> {
     <span class='kw'>pub</span> <span class='ident'>size</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>padding</span>: <span class='ident'>u32</span>,
@@ -936,12 +1002,14 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_getxattr_out</span> {
     <span class='kw'>pub</span> <span class='ident'>size</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>padding</span>: <span class='ident'>u32</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_lk_in</span> {
     <span class='kw'>pub</span> <span class='ident'>fh</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>owner</span>: <span class='ident'>u64</span>,
@@ -949,17 +1017,20 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_lk_out</span> {
     <span class='kw'>pub</span> <span class='ident'>lk</span>: <span class='ident'>fuse_file_lock</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_access_in</span> {
     <span class='kw'>pub</span> <span class='ident'>mask</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>padding</span>: <span class='ident'>u32</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_init_in</span> {
     <span class='kw'>pub</span> <span class='ident'>major</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>minor</span>: <span class='ident'>u32</span>,
@@ -968,6 +1039,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_init_out</span> {
     <span class='kw'>pub</span> <span class='ident'>major</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>minor</span>: <span class='ident'>u32</span>,
@@ -978,11 +1050,13 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_interrupt_in</span> {
     <span class='kw'>pub</span> <span class='ident'>unique</span>: <span class='ident'>u64</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_bmap_in</span> {
     <span class='kw'>pub</span> <span class='ident'>block</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>blocksize</span>: <span class='ident'>u32</span>,
@@ -990,11 +1064,13 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_bmap_out</span> {
     <span class='kw'>pub</span> <span class='ident'>block</span>: <span class='ident'>u64</span>,
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_in_header</span> {
     <span class='kw'>pub</span> <span class='ident'>len</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>opcode</span>: <span class='ident'>u32</span>,
@@ -1007,6 +1083,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_out_header</span> {
     <span class='kw'>pub</span> <span class='ident'>len</span>: <span class='ident'>u32</span>,
     <span class='kw'>pub</span> <span class='ident'>error</span>: <span class='ident'>i32</span>,
@@ -1014,6 +1091,7 @@
 }
 
 <span class='attribute'>#[<span class='ident'>repr</span>(<span class='ident'>C</span>)]</span>
+<span class='attribute'>#[<span class='ident'>derive</span>(<span class='ident'>Debug</span>)]</span>
 <span class='kw'>pub</span> <span class='kw'>struct</span> <span class='ident'>fuse_dirent</span> {
     <span class='kw'>pub</span> <span class='ident'>ino</span>: <span class='ident'>u64</span>,
     <span class='kw'>pub</span> <span class='ident'>off</span>: <span class='ident'>u64</span>,
@@ -1027,10 +1105,12 @@
 
     <section class="footer"></section>
 
-    <div id="help" class="hidden">
+    <aside id="help" class="hidden">
         <div>
+            <h1 class="hidden">Help</h1>
+
             <div class="shortcuts">
-                <h1>Keyboard Shortcuts</h1>
+                <h2>Keyboard Shortcuts</h2>
 
                 <dl>
                     <dt>?</dt>
@@ -1043,11 +1123,13 @@
                     <dd>Move down in search results</dd>
                     <dt>&#9166;</dt>
                     <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
                 </dl>
             </div>
 
             <div class="infos">
-                <h1>Search Tricks</h1>
+                <h2>Search Tricks</h2>
 
                 <p>
                     Prefix searches with a type followed by a colon (e.g.
@@ -1057,28 +1139,28 @@
                 <p>
                     Accepted types are: <code>fn</code>, <code>mod</code>,
                     <code>struct</code>, <code>enum</code>,
-                    <code>trait</code>, <code>typedef</code> (or
-                    <code>tdef</code>).
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
                 </p>
 
                 <p>
                     Search functions by type signature (e.g.
-                    <code>vec -> usize</code>)
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
                 </p>
             </div>
         </div>
-    </div>
+    </aside>
 
     
 
     <script>
-        window.rootPath = "../../";
+        window.rootPath = "../../../";
         window.currentCrate = "fuse";
         window.playgroundUrl = "";
     </script>
-    <script src="../../jquery.js"></script>
-    <script src="../../main.js"></script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
     
-    <script async src="../../search-index.js"></script>
+    <script defer src="../../../search-index.js"></script>
 </body>
 </html>
